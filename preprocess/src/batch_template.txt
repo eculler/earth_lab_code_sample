@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#SBATCH --nodes=1
+#SBATCH --time=23:59:00
+#SBATCH --partition=shas
+#SBATCH --account ucb-summit-hyd
+#SBATCH --qos condo
+#SBATCH --ntasks=4
+#SBATCH --job-name=hydromet
+#SBATCH --output=/projects/elcu4811/landslide.hydromet/log/hydromet.%j.out
+
+# Load modules
+module load singularity/3.6.4
+
+# Run script
+export BASH_ENV=/projects/elcu4811/landslide.hydromet/.bashrc
